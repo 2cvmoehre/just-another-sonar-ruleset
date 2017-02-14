@@ -20,7 +20,7 @@ import org.sonar.plugins.java.api.tree.Tree.Kind;
         priority = Priority.MAJOR,
         tags =
         {
-            "bug"
+            "bad-practice"
         })
 public class NoNewThreadRule extends IssuableSubscriptionVisitor
 {
@@ -37,10 +37,7 @@ public class NoNewThreadRule extends IssuableSubscriptionVisitor
         NewClassTree newClassTree = (NewClassTree) tree;
         if (newClassTree.symbolType().is("java.lang.Thread"))
         {
-            reportIssue(tree, "Never do that");
-        } else
-        {
-            System.out.println("no thread");
+            reportIssue(tree, "Thread instance should not be used directly.");
         }
     }
 
