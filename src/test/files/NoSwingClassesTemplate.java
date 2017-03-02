@@ -1,9 +1,7 @@
 
-//import javafx.application.Platform;
-//import javafx.embed.swing.JFXPanel;
 import javax.swing.JFrame;// Noncompliant
 
-public class NoSwingClassesTest
+public class NoSwingClassesTemplate
 {
 
     private static void initAndShowGUI()
@@ -15,15 +13,5 @@ public class NoSwingClassesTest
         frame.setSize(300, 200);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        /*
-        Platform.runLater(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                initFX(fxPanel);
-            }
-        });*/
     }
 }

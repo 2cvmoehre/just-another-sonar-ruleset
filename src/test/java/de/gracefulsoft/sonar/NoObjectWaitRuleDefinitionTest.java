@@ -13,16 +13,17 @@
  */
 package de.gracefulsoft.sonar;
 
-import de.gracefulsoft.sonar.rules.NoSwingClassesRule;
+import de.gracefulsoft.sonar.rules.NoObjectWaitRule;
 import org.junit.Test;
 import org.sonar.java.checks.verifier.JavaCheckVerifier;
 
-public class NoSwingClassesRuleDefinitionTest
+public class NoObjectWaitRuleDefinitionTest
 {
 
     @Test
-    public void noNewThreadTest()
+    public void noObjectWaitTest()
     {
-        JavaCheckVerifier.verify("src/test/files/NoSwingClassesTemplate.java", new NoSwingClassesRule());
+        JavaCheckVerifier.verify("src/test/files/NoObjectWaitTemplate.java", new NoObjectWaitRule());
     }
+
 }
