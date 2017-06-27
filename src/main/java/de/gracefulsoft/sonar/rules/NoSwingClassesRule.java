@@ -45,7 +45,7 @@ public class NoSwingClassesRule extends IssuableSubscriptionVisitor
     public void visitNode(Tree tree)
     {
         ImportTree importTree = (ImportTree) tree;
-        final String importStatement = ExpressionsHelper.concatenate((ExpressionTree) importTree.qualifiedIdentifier());
+        final String importStatement = Util.concatenate((ExpressionTree) importTree.qualifiedIdentifier());
 
         if (importStatement.startsWith("javax.swing."))
         {
