@@ -14,7 +14,7 @@
 package de.gracefulsoft.sonar.rules;
 
 import java.util.List;
-import org.sonar.api.internal.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableList;;
 import org.sonar.check.Priority;
 import org.sonar.check.Rule;
 import org.sonar.java.checks.helpers.ExpressionsHelper;

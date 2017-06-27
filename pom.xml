@@ -10,8 +10,8 @@
 
 	<properties>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sonar.version>5.6.3</sonar.version>
-		<java.plugin.version>4.2.1.6971</java.plugin.version>
+		<sonar.version>6.3</sonar.version>
+		<java.plugin.version>4.10.0.10260</java.plugin.version>
 		<sslr.version>1.21</sslr.version>
 	</properties>
 
@@ -113,14 +113,15 @@
 			<plugin>
 				<groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
 				<artifactId>sonar-packaging-maven-plugin</artifactId>
-				<version>1.17</version>
+				<version>1.18.0.372</version>
 				<extensions>true</extensions>
 				<configuration>
+                                        <useChildFirstClassLoader>true</useChildFirstClassLoader>
 					<pluginKey>just-another-sonar-ruleset</pluginKey>
 					<pluginName>Additional Java Custom Rules</pluginName>
 					<pluginClass>de.gracefulsoft.sonar.JavaCustomRulesPlugin</pluginClass>
 					<sonarLintSupported>true</sonarLintSupported>
-					<sonarQubeMinVersion>5.6</sonarQubeMinVersion> <!-- allow to depend on API 6.x but run on LTS -->
+					<sonarQubeMinVersion>6.0</sonarQubeMinVersion> <!-- allow to depend on API 6.x but run on LTS -->
 				</configuration>
 			</plugin>
 

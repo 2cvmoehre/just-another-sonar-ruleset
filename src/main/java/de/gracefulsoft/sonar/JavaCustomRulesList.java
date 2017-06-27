@@ -15,6 +15,8 @@ package de.gracefulsoft.sonar;
 
 import com.google.common.collect.ImmutableList;
 import de.gracefulsoft.sonar.rules.NoNewThreadRule;
+import de.gracefulsoft.sonar.rules.NoObjectWaitRule;
+import de.gracefulsoft.sonar.rules.NoSwingClassesRule;
 import java.util.List;
 import org.sonar.plugins.java.api.JavaCheck;
 
@@ -35,6 +37,8 @@ public final class JavaCustomRulesList
         return ImmutableList.<Class<? extends JavaCheck>>builder()
                 // add HERE rules targeting source files
                 .add(NoNewThreadRule.class)
+                //.add(NoObjectWaitRule.class) //not working because using non allowed api
+                .add(NoSwingClassesRule.class)
                 .build();
     }
 
